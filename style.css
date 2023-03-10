@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;/*content size chhota ho jata h*/
+    
+}
+#wrapper{/*sari iske andar*/
+    height: 100vh;/*view port ki max height*/
+    overflow-x:hidden; /*x axis m overflow nhi krna*/
+    overflow-y:auto;
+    perspective: 10px;/*for 3d view,apne eye se kitna dur[perpendicular to z-plane]*/
+}
+.container{  /*Background +Foreground + Heading */
+    position:relative;/*nearest positioned ancesstor agar non static h to main absolute positioning kr paunga*/
+    display: flex;/*adventure ko center krne k liye*/
+    justify-content: center;/*adventure ko center krne k liye*/
+    align-items: center;/*adventure ko center krne k liye*/
+    height: 100%;/**/
+    transform-style:preserve-3d;/*3D k liye nhi to 2d dikhega,3D ko bachane k liye..*/
+    z-index:-1;
+}
+.background{
+    transform: translateZ(-40px) scale(5.05);/*dur kiye backg ko*/
+}
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+.background,.foreground{
+    position:absolute;/*absolute-overlap k liye*/
+    height: 100%;/*we need complete viewport*/
+    width: 100%;
+    z-index:-1;
+    object-fit: cover;
+} 
+h1{
+    position:absolute;
+    top: 5rem;
+    left:50%;
+    transform:translateX(-50%);
+    font-size: 10rem;
+    letter-spacing: 4px;
+    color:white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-family: "poppins", "sans-serif";
+}
+section{
+    background-color: rgb(45,45,45);
+    color:white;
+    padding: 5rem 0;
+}
+.secHeading
+{
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin:5rem 0 ;
+    font-family: "poppins", "sans-serif";
+}
+.bg{
+
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;/*image woh rhegi,aur aap us image k upar scroll kr skte h*/
+    height: 500px;/*window gap/height*/
+    background-size: cover;/*object fit k trh kaam kregi...usi height m complete image show hogi*/
+    background-position: center;/*right jgh p lane k liye*/
+}
+.desc{
+    position:absolute;/*image k upar overlap k liye*/
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: black;
+    font-size: 3.5rem;
+    font-weight: 600;
+    font-family: "poppins", "sans-serif";
+}
+.bg1{
+    background-image: url(./sport-1.jpg);/* img tag vs background-image tag*/
+}
+.bg2{
+    background-image: url(./sport-2.jpg);
+}
+.bg3{
+    background-image: url(./sport-3.jpg);
+}
+
